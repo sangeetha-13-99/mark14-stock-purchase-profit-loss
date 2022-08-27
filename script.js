@@ -22,6 +22,8 @@ function calculateProfitAndLoss(initialPrice,currentPrice,stocksQuantity){
         outputText.innerText=`The profit is ${profit} and profit Percentage is ${profitPercentage.toFixed(4)}`
     }
     else{
+        Container.classList.remove('profit');
+        Container.classList.remove('loss');
         outputText.textContent='no Pain no gain';
     }
 }
