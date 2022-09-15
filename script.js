@@ -9,17 +9,17 @@ var Container=document.querySelector('.container');
 function calculateProfitAndLoss(initialPrice,currentPrice,stocksQuantity){
     if(initialPrice>currentPrice){
         let loss=(initialPrice-currentPrice)*stocksQuantity;
-        let lossPercentage=(loss/initialPrice)*100;
+        let lossPercentage=((loss/initialPrice)*100)/stocksQuantity;
         Container.classList.add('loss');
         Container.classList.remove('profit');
-        outputText.innerText=`The loss is ${loss} and loss Percentage is ${lossPercentage.toFixed(4)}`
+        outputText.innerText=`The loss is ${loss} and loss Percentage is ${lossPercentage.toFixed(2)} %`
     }
     else  if(initialPrice<currentPrice){
         let profit=(currentPrice-initialPrice)*stocksQuantity;
-        let profitPercentage=(profit/initialPrice)*100;
+        let profitPercentage=((profit/initialPrice)*100)/stocksQuantity;
         Container.classList.add('profit');
         Container.classList.remove('loss');
-        outputText.innerText=`The profit is ${profit} and profit Percentage is ${profitPercentage.toFixed(4)}`
+        outputText.innerText=`The profit is ${profit} and profit Percentage is ${profitPercentage.toFixed(2)} %`
     }
     else{
         Container.classList.remove('profit');
